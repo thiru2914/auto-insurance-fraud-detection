@@ -4,6 +4,10 @@
 # In[2]:
 
 
+
+pip install sklearn
+pip install tensorflow
+pip install 
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
