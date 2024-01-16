@@ -4,10 +4,9 @@
 # In[2]:
 
 
-
-pip install sklearn
-pip install tensorflow
-pip install 
+get_ipython().system('pip install sklearn')
+get_ipython().system('pip install tensorflow')
+get_ipython().system('pip install ')
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
