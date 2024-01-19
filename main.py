@@ -10,5 +10,5 @@ fruad = st.text_input('fraud')
 
 if st.button('Click Me'):
     have_it = fraud.lower() in Fraud_Detection
-    if have_it==true:
+    if have_it=='true':
         st.write("true")
