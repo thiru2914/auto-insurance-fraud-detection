@@ -3,7 +3,9 @@ import joblib
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import LabelEncoder
+from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
+from sklearn import metrics
 from sklearn.model_selection import train_test_split
 
 def main():
