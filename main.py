@@ -56,11 +56,11 @@ def main():
         model_choice = st.selectbox("Choose a model", ["Logistic Regression", "Decision Tree", "Random Forest"])
 
         if model_choice == "Logistic Regression":
-            model = joblib.load('logistic_model.joblib')
+            model = joblib.load('logistic_model1.joblib')
         elif model_choice == "Decision Tree":
-            model = joblib.load('decision_tree_model.joblib')
+            model = joblib.load('decision_tree_model1.joblib')
         elif model_choice == "Random Forest":
-            model = joblib.load('random_forest_model.joblib')
+            model = joblib.load('random_forest_model1.joblib')
         predictions = model.predict(df)
 
         st.subheader('Predictions:')
