@@ -31,7 +31,7 @@ def cleanData(df):
     df['Sex'] = df['Sex'].map({'Male': 0, 'Female': 1})
     df['MaritalStatus'] = df['MaritalStatus'].map({'Single': 0, 'Married': 1})
     df = df[df['MonthClaimed'] != '0']
-    df['Month'] = pd.to_datetime(df['Month'], format='ISO8601')
+    df['Month'] = pd.to_datetime(df['Month'], format='%d')
     df['Month'] = df['Month'].dt.month
     day_mapping = {
         'Monday': 0,
@@ -43,7 +43,7 @@ def cleanData(df):
         'Sunday': 6
     }
     df['DayOfWeek'] = df['DayOfWeek'].map(day_mapping)
-    df['MonthClaimed'] = pd.to_datetime(df['MonthClaimed'], format='ISO8601')
+    df['MonthClaimed'] = pd.to_datetime(df['MonthClaimed'], format='%d')
     df['MonthClaimed'] = df['MonthClaimed'].dt.month
     df['DayOfWeekClaimed'] = df['DayOfWeekClaimed'].map(day_mapping)
     le = LabelEncoder()
