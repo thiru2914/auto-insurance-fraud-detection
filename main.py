@@ -9,7 +9,7 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split
 
 def main():
-    st.title('Machine Learning Model Deployment')
+    st.title('Insurance Fraud Detection')
     uploaded_file = st.file_uploader("Choose a file", type=["csv", "xlsx"])
 
     if uploaded_file is not None:
