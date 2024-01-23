@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
 
 def main():
     st.title('Machine Learning Model Deployment')
