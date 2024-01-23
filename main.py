@@ -47,7 +47,7 @@ def cleanData(df):
     df['MonthClaimed'] = df['MonthClaimed'].dt.month
     df['DayOfWeekClaimed'] = df['DayOfWeekClaimed'].map(day_mapping)
     le = LabelEncoder()
-    df['Make'] = le.fit_transform(df['Make'])
+      df['Make'] = le.fit_transform(df['Make'])
     columns_to_encode = ['AccidentArea',
          'Fault',
           'PolicyType',
