@@ -34,20 +34,20 @@ def cleanData(df):
     df['Month'] = pd.to_datetime(df['Month'], format='%b')
     df['Month'] = df['Month'].dt.month
     day_mapping = {
-    'Monday': 0,
-    'Tuesday': 1,
-    'Wednesday': 2,
-    'Thursday': 3,
-    'Friday': 4,
-    'Saturday': 5,
-    'Sunday': 6
-     }
+        'Monday': 0,
+        'Tuesday': 1,
+        'Wednesday': 2,
+        'Thursday': 3,
+        'Friday': 4,
+        'Saturday': 5,
+        'Sunday': 6
+    }
     df['DayOfWeek'] = df['DayOfWeek'].map(day_mapping)
     df['MonthClaimed'] = pd.to_datetime(df['MonthClaimed'], format='%b')
     df['MonthClaimed'] = df['MonthClaimed'].dt.month
     df['DayOfWeekClaimed'] = df['DayOfWeekClaimed'].map(day_mapping)
     le = LabelEncoder()
-      df['Make'] = le.fit_transform(df['Make'])
+    df['Make'] = le.fit_transform(df['Make'])
     columns_to_encode = ['AccidentArea',
          'Fault',
           'PolicyType',
@@ -67,7 +67,8 @@ def cleanData(df):
         'BasePolicy']
     le = LabelEncoder()
     for column in columns_to_encode:
-    df[column] = le.fit_transform(df[column])
+        df[column] = le.fit_transform(df[column])
+
 
 if __name__ == '__main__':
     main()
