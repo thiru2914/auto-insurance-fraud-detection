@@ -53,18 +53,27 @@ def main():
 
         st.subheader('Uploaded Data:')
         st.write(df)
-        model_choice = st.selectbox("Choose a model", ["Logistic Regression", "Decision Tree", "Random Forest"])
+        scaler = StandardScaler()
+        X_train_scaled = scaler.fit_transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+        model = LogisticRegression()
+        model.fit(X_train_scaled, y_train)
+        y_pred = model.predict(X_test_scaled)
+        accuracy = metrics.accuracy_score(y_test, y_pred)
+        precision = metrics.precision_score(y_test, y_pred)
+        recall = metrics.recall_score(y_test, y_pred)
+        # model_choice = st.selectbox("Choose a model", ["Logistic Regression", "Decision Tree", "Random Forest"])
 
-        if model_choice == "Logistic Regression":
-            model = joblib.load('logistic_model1.joblib')
-        elif model_choice == "Decision Tree":
-            model = joblib.load('decision_tree_model1.joblib')
-        elif model_choice == "Random Forest":
-            model = joblib.load('random_forest_model1.joblib')
-        predictions = model.predict(df)
+        # if model_choice == "Logistic Regression":
+        #     model = joblib.load('logistic_model1.joblib')
+        # elif model_choice == "Decision Tree":
+        #     model = joblib.load('decision_tree_model1.joblib')
+        # elif model_choice == "Random Forest":
+        #     model = joblib.load('random_forest_model1.joblib')
+        # predictions = model.predict(df)
 
         st.subheader('Predictions:')
-        st.write(predictions)
+        st.write(model.predict(df))
     
 
 if __name__ == '__main__':
