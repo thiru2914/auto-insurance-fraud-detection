@@ -19,7 +19,7 @@ mdurl==0.1.2
 numpy==1.26.3
 packaging==23.2
 pandas==2.1.4
-scikit-learn
+scikit-learn==0.24.2
 tensorflow
 pillow==10.2.0
 protobuf==4.25.2
@@ -46,3 +46,4 @@ urllib3==2.1.0
 validators==0.22.0
 watchdog==3.0.0
 zipp==3.17.0
+joblib
